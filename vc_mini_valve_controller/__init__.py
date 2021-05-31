@@ -206,7 +206,7 @@ class Microvalve:
         if not self.current_address == ADDRESS_VALVE:
             self.set_address(ADDRESS_VALVE)
 
-        self.command(f'{value}A')
+        self.command(f'{int(value)}A')
             
     def set_open_time(self, value):
         assert 10 <= value <= 9999999
@@ -214,7 +214,7 @@ class Microvalve:
         if not self.current_address == ADDRESS_VALVE:
             self.set_address(ADDRESS_VALVE)
 
-        self.command(f'{value}B')
+        self.command(f'{int(value)}B')
             
     def set_cycle_time(self, value):
         assert 10 <= value <= 9999999
@@ -222,7 +222,7 @@ class Microvalve:
         if not self.current_address == ADDRESS_VALVE:
             self.set_address(ADDRESS_VALVE)
 
-        self.command(f'{value}C')
+        self.command(f'{int(value)}C')
             
     def set_peak_current(self, value):
         assert 0 <= value <= 15
@@ -232,7 +232,7 @@ class Microvalve:
 
         # TODO: input current instead of index
         # Ip = 450mA + (D * 50mA)
-        self.command(f'{value}D')
+        self.command(f'{int(value)}D')
             
     def set_shot_count(self, value):
         assert 0 <= value <= 65535
@@ -240,7 +240,7 @@ class Microvalve:
         if not self.current_address == ADDRESS_VALVE:
             self.set_address(ADDRESS_VALVE)
 
-        self.command(f'{value}G')
+        self.command(f'{int(value)}G')
     
     def zero_shot_counter(self, valve):
         raise Exception('Unimplemented')
